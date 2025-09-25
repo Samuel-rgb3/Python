@@ -1,0 +1,9 @@
+import random
+import string
+
+tamanho = int(input("Tamanho da senha: "))
+
+universo = string.ascii_letters + string.digits + string.punctuation
+senha = "".join(random.choice(universo) for _ in range(tamanho))
+
+print(senha)
