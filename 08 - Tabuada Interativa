@@ -1,0 +1,7 @@
+while True:
+    n = int(input("Digite o número para ver a tabuada: "))
+    for i in range(1, 11):
+        print(f"{n} x {i} = {n * i}")
+    outro = input("Deseja ver outra tabuada? (s/n): ").strip().lower()
+    if outro != "s":
+        break
