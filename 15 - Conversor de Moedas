@@ -1,0 +1,15 @@
+def converter(valor, origem, destino, taxas):
+    base_usd = valor / taxas[origem] if origem != "USD" else valor
+    return base_usd * taxas[destino]
+
+taxas = {"USD": 1.0, "BRL": 5.25, "EUR": 0.95, "JPY": 148.50}
+
+valor = float(input("Valor: "))
+origem = input("Moeda origem (ex: BRL): ").strip().upper()
+destino = input("Moeda destino (ex: EUR): ").strip().upper()
+
+if origem in taxas and destino in taxas:
+    resultado = converter(valor, origem, destino, taxas)
+    print(f"{valor} {origem} = {resultado:.2f} {destino}")
+else:
+    print("Moeda não suportada.")
