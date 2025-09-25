@@ -1,0 +1,25 @@
+tarefas = []
+
+while True:
+    print("\n1) Adicionar  2) Listar  3) Remover  4) Sair")
+    op = input("Escolha uma opção: ").strip()
+    if op == "1":
+        t = input("Digite a tarefa: ").strip()
+        tarefas.append(t)
+    elif op == "2":
+        if not tarefas:
+            print("Nenhuma tarefa.")
+        else:
+            for idx, tarefa in enumerate(tarefas, 1):
+                print(f"{idx}: {tarefa}")
+    elif op == "3":
+        idx = int(input("Número da tarefa a remover: "))
+        if 1 <= idx <= len(tarefas):
+            tarefas.pop(idx - 1)
+            print("Removida.")
+        else:
+            print("Índice inválido.")
+    elif op == "4":
+        break
+    else:
+        print("Opção inválida.")
