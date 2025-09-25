@@ -1,0 +1,9 @@
+inicio = int(input("Digite o número inicial: "))
+fim = int(input("Digite o número final: "))
+
+i = inicio
+while True:
+    print(i)
+    if i == fim:
+          break
+    i = i + 1
