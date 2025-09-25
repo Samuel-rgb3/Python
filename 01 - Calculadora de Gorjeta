@@ -1,0 +1,9 @@
+valor_conta = float(input("Digite o valor da conta: R$ "))
+porcentagem = float(input("Digite a porcentagem da gorjeta: "))
+
+gorjeta = valor_conta * (porcentagem / 100)
+total = valor_conta + gorjeta
+
+print("Valor da conta:", valor_conta)
+print("Gorjeta:", gorjeta)
+print("Total a pagar:", total)
