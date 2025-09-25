@@ -1,0 +1,12 @@
+import random
+
+citacoes = [
+    "Acredite em si mesmo e tudo será possível.",
+    "Nunca desista dos seus sonhos.",
+    "A persistência leva ao sucesso.",
+    "Grandes jornadas começam com um pequeno passo.",
+    "O esforço de hoje é a vitória de amanhã."
+]
+
+print("Citação inspiradora:")
+print(random.choice(citacoes))
