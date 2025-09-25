@@ -1,0 +1,29 @@
+contatos = {}
+
+while True:
+    print("\n1) Adicionar  2) Buscar  3) Listar  4) Remover  5) Sair")
+    op = input("Escolha: ").strip()
+    if op == "1":
+        nome = input("Nome: ").strip()
+        tel = input("Telefone: ").strip()
+        contatos[nome] = tel
+    elif op == "2":
+        nome = input("Nome para buscar: ").strip()
+        print(contatos.get(nome, "Contato não encontrado."))
+    elif op == "3":
+        if not contatos:
+            print("Agenda vazia.")
+        else:
+            for nome, tel in contatos.items():
+                print(f"{nome}: {tel}")
+    elif op == "4":
+        nome = input("Nome a remover: ").strip()
+        if nome in contatos:
+            del contatos[nome]
+            print("Removido.")
+        else:
+            print("Não encontrado.")
+    elif op == "5":
+        break
+    else:
+        print("Opção inválida.")
