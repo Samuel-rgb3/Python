@@ -1,0 +1,27 @@
+import random
+
+palavras = ["python", "programa", "escola", "desafio", "computador"]
+secreta = random.choice(palavras)
+mostrar = ["_"] * len(secreta)
+tentativas = 6
+letras_tentadas = set()
+
+while tentativas > 0 and "_" in mostrar:
+    print("Palavra:", " ".join(mostrar))
+    print("Tentativas restantes:", tentativas)
+    palpite = input("Digite uma letra: ").strip().lower()
+    if palpite in letras_tentadas:
+        print("Você já tentou essa letra.")
+        continue
+    letras_tentadas.add(palpite)
+    if palpite in secreta:
+        for i, c in enumerate(secreta):
+            if c == palpite:
+                mostrar[i] = palpite
+    else:
+        tentativas -= 1
+
+if "_" not in mostrar:
+    print("Você venceu! Palavra:", secreta)
+else:
+    print("Você perdeu. A palavra era:", secreta)
